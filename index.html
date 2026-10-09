@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6f4">
+    <meta name="description" content="Entraînement original aux examens d'admission à la maturité professionnelle technique post-CFC.">
+    <title>Cap MPT — Préparation à la maturité professionnelle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navigation des matières">
+        <a class="brand" id="home-link" href="#" aria-label="Afficher toutes les matières">
+          <span class="brand-mark" aria-hidden="true">M</span>
+          <span>cap<span class="brand-light">mpt</span></span>
+        </a>
+
+        <div class="sidebar-label">MATIÈRES</div>
+        <nav id="subject-nav" class="subject-nav"></nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-note">
+          <p>Documents et données<br><strong>officiels · CEFF</strong></p>
+          <a href="#sources">Consulter les sources ↗</a>
+        </div>
+        <div class="sidebar-footer">PRÉPARATION POST-CFC · TAS</div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>MATURITÉ PROFESSIONNELLE POST-CFC</span><span class="crumb-sep">/</span><strong id="crumb-subject">TOUTES LES MATIÈRES</strong></div>
+          <a class="official-pill" href="https://www.ceff.ch/industrie/inscriptions/maturite-professionnelle-technique/mpt-post-cfc" target="_blank" rel="noreferrer">
+            Session 2027–2028 <span aria-hidden="true">↗</span>
+          </a>
+        </header>
+
+        <div class="page-wrap">
+          <section class="dashboard-header" aria-labelledby="welcome-title">
+            <div class="dashboard-title">
+              <h1 id="welcome-title">Préparation à la maturité professionnelle</h1>
+              <p>Exercices et modules d'entraînement · Admission post-CFC</p>
+            </div>
+            <div class="global-progress" aria-labelledby="progress-title">
+              <div class="progress-copy"><strong id="progress-title">Progression globale</strong><span id="progress-count">0 exercice terminé sur 47</span></div>
+              <div class="progress-track" role="progressbar" aria-label="Progression globale" aria-valuemin="0" aria-valuemax="47" aria-valuenow="0"><span id="progress-bar"></span></div>
+              <span id="progress-percent" class="progress-percent">0 %</span>
+            </div>
+            <button id="resume-button" class="primary-button resume-button" type="button">Reprendre l'entraînement <span aria-hidden="true">→</span></button>
+          </section>
+
+          <section class="session-info" aria-labelledby="session-title">
+            <div class="session-heading">
+              <h2 id="session-title">Session CEFF · rentrée 2027–2028</h2>
+              <a href="https://www.ceff.ch/industrie/inscriptions/maturite-professionnelle-technique/mpt-post-cfc" target="_blank" rel="noreferrer">Informations d’admission ↗</a>
+            </div>
+            <div class="session-grid">
+              <div class="session-item"><span>Délai d'inscription</span><strong>15 février 2027</strong></div>
+              <div class="session-item"><span>Examen d'admission</span><strong>8 mars 2027</strong></div>
+              <div class="session-item"><span>Début des cours</span><strong>16 août 2027</strong></div>
+              <div class="session-item"><span>Formation à plein temps</span><strong>40 semaines · 37 périodes / semaine</strong></div>
+            </div>
+            <div class="session-foot">
+              <span>Deux semaines d’examens finaux à fin juin · Inscriptions 2027–2028 annoncées dès le 12 octobre 2026.</span>
+              <a href="https://www.ceff.ch/ceff/voies-de-formation/maturite-professionnelle/maturite-professionnelle-technique" target="_blank" rel="noreferrer">Détails de la formation ↗</a>
+            </div>
+          </section>
+
+          <section class="practice-section" id="practice" aria-labelledby="practice-title">
+            <div class="section-heading"><h2 id="practice-title">Matières</h2></div>
+            <div id="subject-cards" class="subject-cards"></div>
+
+            <div class="practice-layout">
+              <div class="exercise-browser">
+                <div class="browser-head">
+                  <div><h2>Bibliothèque d'exercices</h2><strong id="library-title">Toutes les matières</strong></div>
+                  <span id="exercise-total" class="exercise-total"></span>
+                </div>
+                <div id="topic-filters" class="topic-filters" aria-label="Filtrer par thème"></div>
+                <div id="exercise-list" class="exercise-list"></div>
+              </div>
+              <article id="exercise-panel" class="exercise-panel" aria-live="polite"></article>
+            </div>
+          </section>
+
+          <section class="sources-section" id="sources" aria-labelledby="sources-title">
+            <div class="sources-heading">
+              <div><h2 id="sources-title">Sources officielles CEFF</h2></div>
+              <p>Les ressources officielles sont distinctes des exercices originaux de cette application.</p>
+            </div>
+            <div class="source-notice"><span aria-hidden="true">i</span><span>Le CEFF recommande de préparer en priorité la série 2026, les examens d’admission étant centralisés dans le canton de Berne depuis 2025–2026.</span><a href="https://www.ceff.ch/industrie/inscriptions/maturite-professionnelle-technique/inscriptions-mp-donnees-examens" target="_blank" rel="noreferrer">Page des examens ↗</a></div>
+            <div id="source-links" class="source-links"></div>
+            <p class="date-note">Note sur les PDF de thèmes : les noms de fichiers mentionnent « 2025-2026 », tandis que le texte visible des documents indique « 2026-2027 ».</p>
+          </section>
+
+          <footer class="page-footer"><span>Cap MPT · Outil d'entraînement indépendant</span><a href="https://www.ceff.ch/industrie/inscriptions/maturite-professionnelle-technique/mpt-post-cfc" target="_blank" rel="noreferrer">CEFF · Informations d’admission ↗</a></footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
